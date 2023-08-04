@@ -191,8 +191,8 @@ export default function() {
           const avgd = getAverages(statMap._totals)
           setAvgData(avgd)
 
-          // Use freshly calculated `avgd`; `setAvgData()` (L196) runs in parallel
-          // and will _not_ have finished yet, leading to a `null` value!
+          // Use freshly calculated `avgd`; `setAvgData()` (L196) runs in parallel and
+          // will _not_ have finished yet; using `avgData` will lead to a `null` value!
           setDisplayData({
             averages: avgd,
             content: statMap._totals
